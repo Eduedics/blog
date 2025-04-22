@@ -1,5 +1,5 @@
 # blog
-Description: This endpoint returns a list of blog posts to be consumed by a React frontend. Each blog post includes essential information such as title, content preview, author, publish date, and slug for detailed view navigation.  
+Description: This endpoint returns a list of blog posts to be consumed by a React frontend. Each blog post includes essential information such as title, content preview, author, publish date, and id for detailed view navigation.These data by default will be directly be fetched from twitter post on each user in real time using twitter Api.
 Method: GET
 
 Response:

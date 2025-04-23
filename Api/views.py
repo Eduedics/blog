@@ -1,10 +1,18 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from .serializers import PostSerializer
 
 # Create your views here.
 @api_view(['GET'])
+def EndpointView(request):
+    endpionts = 'post/,  post/<str:pk>/'
+    return Response(endpionts)
+
+
+@api_view(['GET'])
 def Bloglistview(request):
-    return Response('hey there')
+    serializer = PostSerializer()
+    return Response(serializer.data)
 
 
 

@@ -3,5 +3,6 @@ from Api.views import *
 urlpatterns = [
     path('',EndpointView,name='endpoints'),
     path('post/',Bloglistview,name='posts'),
-    path('post/<str:pk>/',BlogDetailview,name='posts')
+    path('post/<uuid:pk>/',BlogDetailview,name='posts'),
+    
 ]

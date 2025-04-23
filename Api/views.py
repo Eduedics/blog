@@ -29,8 +29,8 @@ def Bloglistview(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def BlogDetailview(request, id):
-    post = get_object_or_404(Post, pk=id)
+def BlogDetailview(request, pk):
+    post = get_object_or_404(Post, pk=pk)
 
     if request.method == 'GET':
         serializer = PostSerializer(post)

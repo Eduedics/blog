@@ -25,7 +25,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairView):
 
 @api_view(['GET'])
 def EndpointView(request):
-    endpionts = 'post/,  post/<str:pk>/'
+    endpionts = ['post/',  'post/<str:pk>/','api/token/','api/token/refresh']
     return Response(endpionts)
 
 

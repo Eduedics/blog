@@ -10,6 +10,7 @@ urlpatterns = [
     path('post/',Bloglistview,name='posts'),
     path('post/<uuid:pk>/',BlogDetailview,name='posts'),
     path('api/token/', MyTokenObtainPairSerializer.as_view(), name='token_obtain_pair'),
+    path('api/register/', RegisterView.as_view(), name='register'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     
 ]

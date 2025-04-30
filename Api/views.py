@@ -1,6 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import PostSerializer
+from .serializers import PostSerializer,RegisterSerializer
+from django.contrib.auth.models import User
+from rest_framework import generics
 from . models import Post
 from django.shortcuts import get_object_or_404
 from rest_framework import status
@@ -9,6 +11,10 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 # Create your views here.
+# CreateAPIView provides:POST for creating objects.Automatic handling of validation, saving, and response formatting.
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
